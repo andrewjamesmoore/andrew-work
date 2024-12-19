@@ -1,0 +1,87 @@
+:root {
+  font-family: "Space Mono", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 13px;
+}
+
+h1 {
+font-size: 13px;
+font-weight: 400;
+}
+
+hr {
+border: 0.5px solid #c3c3c3;
+}
+
+ul {
+    padding: 0 16px; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1120 / 1120;
+}
+
+.nav {
+padding: 0 16px;
+}
+
+.section {
+padding: 16px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 0;
+}
+
+@media (min-width: 640px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 16px;
+  padding: 0;
+}
+
+.project-section ul {
+    list-style: none; /* Removes the bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+}
+
+.project-item {
+    box-sizing: border-box;
+    display: block;
+    gap: 8px;
+    background: #f0f0f0;
+    padding: 16px;
+    break-inside: avoid-column;
+}
+
+ul li {
+    margin-bottom: 4px; /* Adjusts spacing between list items */
+}
