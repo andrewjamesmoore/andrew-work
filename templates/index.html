@@ -29,19 +29,19 @@
 <section class="section">
     <p>Projects</p>
     <hr>
-    <div class="project-grid">
-    <ul class="project-section">
+<!--    <div class="project-grid">-->
+    <ul class="project-grid">
     {% for project in projects %}
     <li class="project-item">
         <a href="{{ project.link }}">{{ project.title }}</a>
-        <span>{{ project.description }}</span>
+        <p><span>{{ project.description }}</span></p>
         {% if project.img %}
         <img src="{{ project.img }}" alt="{{ project.title }} image">
         {% endif %}
     </li>
     {% endfor %}
         </ul>
-        </div>
+<!--        </div>-->
 </section>
 </body>
 </html>

@@ -35,29 +35,32 @@ padding: 16px;
 }
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  padding: 0;
+  column-count: 4;
+  column-gap: 20px;
+  list-style: none; /* Removes the bullet points */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
 }
 
-@media (min-width: 640px) {
+/* Adjust columns for smaller screens */
+@media (max-width: 1200px) {
   .project-grid {
-    grid-template-columns: repeat(2, 1fr);
+    column-count: 3; /* Reduce columns for medium screens */
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .project-grid {
-    grid-template-columns: repeat(3, 1fr);
+    column-count: 2; /* Reduce further for smaller screens */
   }
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 480px) {
   .project-grid {
-    grid-template-columns: repeat(4, 1fr);
+    column-count: 1; /* Single column for very small screens */
   }
 }
+
 
 .project-section {
   display: flex;
@@ -68,20 +71,15 @@ padding: 16px;
 }
 
 .project-section ul {
-    list-style: none; /* Removes the bullet points */
-    padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
+
 }
 
 .project-item {
-    box-sizing: border-box;
     display: block;
     gap: 8px;
     background: #f0f0f0;
     padding: 16px;
-    break-inside: avoid-column;
+    break-inside: avoid;
+    margin-bottom: 16px;
 }
 
-ul li {
-    margin-bottom: 4px; /* Adjusts spacing between list items */
-}
