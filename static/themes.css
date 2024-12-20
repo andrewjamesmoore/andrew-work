@@ -1,16 +1,33 @@
 :root {
     --bg-color: white;
+    --bg-color-alt: #f2f2f2;
+    --surface-hover: blue;
     --text-color: black;
+    --text-hover: white;
+    --border: #c2c2c2;
+    --a-color: blue;
+    --a-visited-color: purple;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background-color 0.3s, color 0.3s;
+    border: var(--border);
+    a:link {
+    color: var(--a-color);
+    }
+    a:visited {
+    color: var(--a-visited-color);
+    }
 }
 
 body.dark-mode {
-    --bg-color: black;
+    --bg-color: #121212;
+    --bg-color-alt: #202020;
+    --surface-hover: dodgerblue;
     --text-color: white;
-    transition: background-color 0.3s, color 0.3s;
+    --text-hover: white;
+    --border: #444444;
+    --a-color: dodgerblue;
+    --a-visited-color: orchid;
 }

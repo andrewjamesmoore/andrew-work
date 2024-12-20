@@ -12,7 +12,7 @@ h3 {
 
 hr {
   border: 0;
-  border-top: 1px solid #c2c2c2; /* Match navbar underline */
+  border-top: 1px solid var(--border);
   margin: var(--space-small) 0;
 }
 
@@ -31,7 +31,7 @@ img {
 /* Navbar */
 .nav {
   width: 100%;
-  border-bottom: 1px solid #c2c2c2;
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -47,10 +47,21 @@ img {
   padding: var(--space-small) var(--space-base);
 }
 
+.stack-row {
+    display: flex;
+    gap: var(--space-base);
+}
+
 section {
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--space-largest) var(--space-base) 0;
+}
+
+@media (max-width: 480px) {
+  .two-column-section {
+    column-count: 1;
+  }
 }
 
 .project-grid {
@@ -90,7 +101,7 @@ section {
 /* Footer */
 .footer {
   width: 100%;
-  border-top: 1px solid #c2c2c2;
+  border-top: 1px solid var(--border);
   margin-top: var(--space-largest);
 }
 
@@ -103,3 +114,4 @@ section {
   align-items: center;
   padding: var(--space-small) var(--space-base);
 }
+
