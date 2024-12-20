@@ -1,22 +1,24 @@
-:root {
-  font-family: "Space Mono", serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 13px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-font-size: 13px;
-font-weight: 400;
+h1,
+h2,
+h3 {
+  font: var(--text-base);
 }
 
 hr {
-border: 0.5px solid #c3c3c3;
+  border: 0;
+  border-top: 1px solid #c2c2c2; /* Match navbar underline */
+  margin: var(--space-small) 0;
 }
 
 ul {
-    padding: 0 16px; /* Removes default padding */
-    margin: 0; /* Removes default margin */
+  padding: 0 var(--space-base);
+  margin: 0;
 }
 
 img {
@@ -26,60 +28,78 @@ img {
   aspect-ratio: 1120 / 1120;
 }
 
+/* Navbar */
 .nav {
-padding: 0 16px;
+  width: 100%;
+  border-bottom: 1px solid #c2c2c2;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.section {
-padding: 16px;
+.nav .container {
+  background-color: var(--bg-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-small) var(--space-base);
+}
+
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-largest) var(--space-base) 0;
 }
 
 .project-grid {
   column-count: 4;
-  column-gap: 20px;
-  list-style: none; /* Removes the bullet points */
-  padding: 0; /* Removes default padding */
-  margin: 0; /* Removes default margin */
+  column-gap: var(--space-large);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Adjust columns for smaller screens */
 @media (max-width: 1200px) {
   .project-grid {
-    column-count: 3; /* Reduce columns for medium screens */
+    column-count: 3;
   }
 }
 
 @media (max-width: 768px) {
   .project-grid {
-    column-count: 2; /* Reduce further for smaller screens */
+    column-count: 2;
   }
 }
 
 @media (max-width: 480px) {
   .project-grid {
-    column-count: 1; /* Single column for very small screens */
+    column-count: 1;
   }
 }
 
-
-.project-section {
+.project-item {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  gap: 16px;
-  padding: 0;
+  break-inside: avoid;
+  gap: var(--space-smallest);
+  margin-bottom: var(--space-large);
 }
 
-.project-section ul {
-
+/* Footer */
+.footer {
+  width: 100%;
+  border-top: 1px solid #c2c2c2;
+  margin-top: var(--space-largest);
 }
 
-.project-item {
-    display: block;
-    gap: 8px;
-    background: #f0f0f0;
-    padding: 16px;
-    break-inside: avoid;
-    margin-bottom: 16px;
+.footer .container {
+  background-color: var(--bg-color);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-small) var(--space-base);
 }
-

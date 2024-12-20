@@ -1,0 +1,7 @@
+:root {
+    --text-base: normal 400 13px/1.5 "Space Mono", mono, sans-serif;
+    font: var(--text-base);
+    line-height: 1.6;
+}
+
+--text-

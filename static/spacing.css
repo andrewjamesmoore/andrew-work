@@ -1,0 +1,9 @@
+:root {
+	--base-unit: 16px;
+
+	--space-smallest: calc(var(--base-unit) / 4); /* 4 */
+	--space-small: calc(var(--base-unit) / 2); /* 8 */
+	--space-base: calc(var(--base-unit) * 1); /* 16 */
+	--space-large: calc(var(--base-unit) * 1.5); /* 24 */
+	--space-largest: calc(var(--base-unit) * 3); /* 48 */
+}

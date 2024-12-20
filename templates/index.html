@@ -3,38 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Andrew James Moore</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='foundations.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body>
-<header>
-    <nav class="nav">
-    <h1>Andrew James Moore</h1>
-    </nav>
-</header>
+<body class="{{ theme }}">
 
-<section class="section">
-    <p>Skills</p>
+
+<nav class="nav">
+    <div class="container">
+    <div>
+        <h1>Andrew James Moore</h1>
+    </div>
+    <div>
+        <span><a href="mailto:hello@andrewjamesmoore.com" target="_blank">[Email]</a></span>
+        <span><a href="https://github.com/andrewjamesmoore" target="_blank">[Github]</a></span>
+        <span><a href="https://www.linkedin.com/in/andrew-james-moore/" target="_blank">[LinkedIn]</a></span>
+        <form action="{{ url_for('toggle_theme') }}" method="post">
+            <button type="submit">Toggle Theme</button>
+        </form>
+    </div>
+</div>
+</nav>
+
+<section>
+    <h2>Skills</h2>
     <hr>
     <ul>
         <li>Product Design Lead</li>
-    <li>Design Systems Engineering</li>
-    <li>Front End Development</li>
+        <li>Design Systems Engineering</li>
+        <li>Front End Development</li>
         <li>Product Management</li>
     </ul>
 </section>
-<section class="section">
-    <p>Projects</p>
+
+
+<section>
+    <h2>Projects</h2>
     <hr>
 <!--    <div class="project-grid">-->
     <ul class="project-grid">
     {% for project in projects %}
     <li class="project-item">
-        <a href="{{ project.link }}">{{ project.title }}</a>
-        <p><span>{{ project.description }}</span></p>
+        <h3><a href="{{ project.link }}">{{ project.title }}</a></h3>
+        <div>{{ project.description }}</div>
         {% if project.img %}
         <img src="{{ project.img }}" alt="{{ project.title }} image">
         {% endif %}
@@ -43,5 +57,17 @@
         </ul>
 <!--        </div>-->
 </section>
+
+<footer class="footer">
+    <div class="container">
+    <div>
+        <span>{{ date }}</span>
+    </div>
+    <div>
+        <span>Made with Flask</span>
+    </div>
+</div>
+</footer>
+
 </body>
 </html>
