@@ -1,0 +1,13 @@
+/* Base typography styles */
+body {
+  font: var(--text-base);
+  line-height: 1.6;
+  font-display: optional;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  font: var(--text-base);
+}

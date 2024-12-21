@@ -1,0 +1,53 @@
+/* homepage body content */
+
+/* skills and tools section */
+.home__skills {
+  column-count: 2;
+  column-gap: var(--space-large);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 500px) {
+  .home__skills {
+    column-count: 1;
+  }
+}
+
+/* project overview */
+.home__project {
+  column-count: 4;
+  column-gap: var(--space-large);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .home__project {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  .home__project {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .home__project {
+    column-count: 1;
+  }
+}
+
+.home__project__item {
+  display: flex;
+  flex-direction: column;
+  break-inside: avoid;
+  gap: var(--space-smallest);
+  margin-bottom: var(--space-large);
+  width: 100%;
+}

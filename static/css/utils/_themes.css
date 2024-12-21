@@ -1,0 +1,27 @@
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: var(--border);
+  a:link {
+    color: var(--a-color);
+  }
+  a:visited {
+    color: var(--a-visited-color);
+  }
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --bg-color-alt: #202020;
+  --text-color: white;
+  --text-hover: white;
+  --border: #444444;
+  --a-color: #d5ffc0;
+  --a-visited-color: #d5ffc0;
+}
+
+/* Dark Mode Support for Tooltip */
+body.dark-mode [data-tooltip]::after {
+  --tooltip-bg: white;
+  --tooltip-text: black;
+}

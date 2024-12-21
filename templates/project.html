@@ -1,20 +1,16 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <section>
-    <div class="halved">
-        <span><a href="/">[Return Home]</a></span>
-    </div>
+  <div class="project">
+    <span><a href="/">[Return Home]</a></span>
+  </div>
 
-    <div class="halved">
-        <div>
-            <h1><strong>{{ project['title'] }}</strong></h1>
-        </div>
-        <div>
-            <div class="project-body">
-                {{ project['body_html'] | safe }}
-            </div>
-        </div>
+  <div class="project">
+    <div>
+      <h1><strong>{{ project['title'] }}</strong></h1>
     </div>
-    </section>
+    <div>
+      <div>{{ project['body_html'] | safe }}</div>
+    </div>
+  </div>
+</section>
 {% endblock %}

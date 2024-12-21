@@ -1,0 +1,14 @@
+/* footer */
+.footer {
+  width: 100%;
+  border-top: 1px solid var(--border);
+  background-color: var(--bg-color);
+  padding: var(--space-small) var(--space-base);
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,38 @@
+/* Navbar */
+.nav {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav .container {
+  background-color: var(--bg-color);
+  padding: var(--space-small) var(--space-base);
+}
+
+@media (max-width: 500px) {
+  .nav .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-smallest);
+  }
+}
+
+.links {
+  display: flex;
+  gap: var(--space-base);
+}
+
+.links__contact {
+  display: flex;
+  gap: var(--space-base);
+}

@@ -1,0 +1,8 @@
+/* main content area */
+.base {
+  max-width: 1200px;
+  width: 100%;
+  flex-grow: 1;
+  margin: 0 auto;
+  padding-bottom: var(--space-large);
+}
