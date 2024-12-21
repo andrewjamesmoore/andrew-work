@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, request, make_response, redirect, url_for
-from contentful_client import get_all_entries
-from contentful_client import fetch_project_by_slug
+from contentful_client import get_all_entries, fetch_project_by_slug
+from markdown2 import markdown
 
 app = Flask(__name__)
 
@@ -14,14 +14,16 @@ def home():
         project_list = []
     theme = request.cookies.get("theme", "light-mode")
     current_date = datetime.now().strftime("%B %Y")
-    return render_template("index.html", projects=project_list, date=current_date, theme=theme)
-
+    return render_template("home.html", projects=project_list, date=current_date, theme=theme)
 
 @app.route("/projects/<slug>")
 def project(slug):
-    project_data = fetch_project_by_slug(slug)
+    project_data = fetch_project_by_slug(slug)  # Assuming this fetches the project
+    project_data['body_html'] = markdown(project_data.get('body', ''))
     theme = request.cookies.get("theme", "light-mode")
-    return render_template("project.html", project=project_data, theme=theme)
+    current_date = datetime.now().strftime("%B %Y")
+    return render_template("project.html", project=project_data, date=current_date, theme=theme)
+
 
 
 @app.route("/toggle_theme", methods=["GET", "POST"])
@@ -32,7 +34,6 @@ def toggle_theme():
     response = make_response(redirect(referer_url))
     response.set_cookie("theme", new_theme)
     return response
-
 
 if __name__ == "__main__":
     app.run(debug=True)

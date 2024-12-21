@@ -5,8 +5,8 @@
     --text-color: black;
     --text-hover: white;
     --border: #c2c2c2;
-    --a-color: blue;
-    --a-visited-color: blue;
+    --a-color: #5865F2;
+    --a-visited-color: #5865F2;
 }
 
 body {
@@ -28,6 +28,6 @@ body.dark-mode {
     --text-color: white;
     --text-hover: white;
     --border: #444444;
-    --a-color: skyblue;
-    --a-visited-color: skyblue;
+    --a-color: #D5FFC0;
+    --a-visited-color: #D5FFC0;
 }

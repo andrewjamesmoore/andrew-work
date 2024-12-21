@@ -15,7 +15,12 @@ def get_all_entries(content_type):
         # Handle missing or empty fields
         title = fields.get('title', 'untitled')
         description = fields.get('description', '')
+        body = fields.get('body')
         slug = fields.get('slug', title.replace(" ", "-").lower())  # Generate slug if not present
+        if 'embedded-assets' in body:
+            for embedded_asset in body['embedded-assets']:
+                if embedded_asset['type'] == 'Link' and embedded_asset['linkType'] == 'Asset':
+                    image_url = embedded_asset['url']
         thumbnail = None
         # If a thumbnail exists, extract its URL
         if 'thumbnail' in fields and fields['thumbnail']:
@@ -42,4 +47,3 @@ def fetch_project_by_slug(slug):
     except Exception as e:
         print(f"Error fetching project with slug {slug}: {e}")
         return None
-

@@ -1,53 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ project.title }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='foundations.css') }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-
-</head>
-
-<body class="{{ theme }}">
-
-<nav class="nav">
-    <div class="container theme-toggle">
-    <div>
-        <h1>Andrew James Moore</h1>
-    </div>
-        <div>
-            <span><a href="mailto:hello@andrewjamesmoore.com" target="_blank">[Email]</a></span>
-            <span><a href="https://github.com/andrewjamesmoore" target="_blank">[Github]</a></span>
-            <span><a href="https://www.linkedin.com/in/andrew-james-moore/" target="_blank">[LinkedIn]</a></span>
-            <span><a href="{{ url_for('toggle_theme') }}">[Toggle Colour Mode]</a></span>
-            </div>
-    </div>
-</nav>
-
+{% block content %}
 <section>
-    <span><a href="/">← back</a></span>
-</section>
-    <section>
-        <h1>{{ project.title }}</h1>
-        <p>{{ project.description }}</p>
-        <p>{{ project.body }}</p>
+    <div class="halved">
+        <span><a href="/">[Return Home]</a></span>
+    </div>
+
+    <div class="halved">
+        <div>
+            <h1><strong>{{ project['title'] }}</strong></h1>
+        </div>
+        <div>
+            <div class="project-body">
+                {{ project['body_html'] | safe }}
+            </div>
+        </div>
+    </div>
     </section>
-
-    <!-- Add other project details here -->
-
-<footer class="footer">
-    <div class="container">
-    <div>
-        <span>{{ date }}</span>
-    </div>
-    <div>
-        <span>Made with Python</span>
-    </div>
-</div>
-</footer>
-</body>
-</html>
+{% endblock %}

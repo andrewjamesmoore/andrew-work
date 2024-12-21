@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section>
+        <h2>About</h2>
+        <hr>
+        <div>
+            I'm Andrew, a Calgary-based designer and developer working on enterprise software projects.
+        </div>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <hr>
+        <ul>
+            <li>Product Design Lead</li>
+            <li>Design Systems Engineering</li>
+            <li>Front End Development</li>
+            <li>Product Management</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <hr>
+        <ul class="project-grid">
+            {% for project in projects %}
+                <li class="project-item">
+                    <h3><a href="/projects/{{ project.fields.slug }}">{{ project.fields.title }}</a></h3>
+                    <div>{{ project.fields.description }}</div>
+                    {% if project.fields.thumbnail %}
+                        <img src="{{ project.fields.thumbnail }}" alt="{{ project.fields.title }} thumbnail">
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

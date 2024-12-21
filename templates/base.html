@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Andrew James Moore | Designer and Developer{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='foundations.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100;200;300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body class="{{ theme }}">
+
+    <nav class="nav">
+        <div class="container theme-toggle">
+            <div>
+                <h1>Andrew James Moore</h1>
+            </div>
+            <div class="nav-links">
+                <span><a href="mailto:hello@andrewjamesmoore.com" target="_blank">[Email]</a></span>
+                <span><a href="https://github.com/andrewjamesmoore" target="_blank">[Github]</a></span>
+                <span><a href="https://www.linkedin.com/in/andrew-james-moore/" target="_blank">[LinkedIn]</a></span>
+                <span><a href="{{ url_for('toggle_theme') }}">[Toggle Colour Mode]</a></span>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <span>{{ date }}</span>
+            </div>
+            <div>
+                <span>Made with Python</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
