@@ -6,7 +6,7 @@
     --text-hover: white;
     --border: #c2c2c2;
     --a-color: blue;
-    --a-visited-color: purple;
+    --a-visited-color: blue;
 }
 
 body {
@@ -28,6 +28,6 @@ body.dark-mode {
     --text-color: white;
     --text-hover: white;
     --border: #444444;
-    --a-color: dodgerblue;
-    --a-visited-color: orchid;
+    --a-color: skyblue;
+    --a-visited-color: skyblue;
 }

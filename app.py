@@ -1,28 +1,38 @@
-from flask import Flask, render_template, request, make_response, redirect, url_for
 from datetime import datetime
-import json
+from flask import Flask, render_template, request, make_response, redirect, url_for
+from contentful_client import get_all_entries
+from contentful_client import fetch_project_by_slug
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    with open('./data/projects.json') as f:
-        project_list = json.load(f)
-        theme = request.cookies.get("theme", "light-mode")
-        current_date = datetime.now().strftime("%B %Y")
-        if not theme:
-            prefers_dark = "dark" in request.headers.get("User-Agent", "").lower()
-            theme = "dark-mode" if prefers_dark else "light-mode"
+    try:
+        project_list = get_all_entries('projects')
+    except Exception as e:
+        print(f"Error fetching projects: {e}")
+        project_list = []
+    theme = request.cookies.get("theme", "light-mode")
+    current_date = datetime.now().strftime("%B %Y")
     return render_template("index.html", projects=project_list, date=current_date, theme=theme)
+
+
+@app.route("/projects/<slug>")
+def project(slug):
+    project_data = fetch_project_by_slug(slug)
+    theme = request.cookies.get("theme", "light-mode")
+    return render_template("project.html", project=project_data, theme=theme)
+
 
 @app.route("/toggle_theme", methods=["GET", "POST"])
 def toggle_theme():
     current_theme = request.cookies.get("theme", "light-mode")
     new_theme = "dark-mode" if current_theme == "light-mode" else "light-mode"
-    response = make_response(redirect(url_for("home")))
+    referer_url = request.referrer or url_for('home')
+    response = make_response(redirect(referer_url))
     response.set_cookie("theme", new_theme)
     return response
 
+
 if __name__ == "__main__":
     app.run(debug=True)
-
