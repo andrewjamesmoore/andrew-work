@@ -18,12 +18,21 @@
             <div>
                 <h1>Andrew James Moore</h1>
             </div>
-            <div class="nav-links">
-                <span><a href="mailto:hello@andrewjamesmoore.com" target="_blank">[Email]</a></span>
-                <span><a href="https://github.com/andrewjamesmoore" target="_blank">[Github]</a></span>
-                <span><a href="https://www.linkedin.com/in/andrew-james-moore/" target="_blank">[LinkedIn]</a></span>
-                <span><a href="{{ url_for('toggle_theme') }}">[Toggle Colour Mode]</a></span>
-            </div>
+<div class="nav-links">
+    <span>
+        <a href="mailto:hello@andrewjamesmoore.com" target="_blank" data-tooltip="hello@andrewjamesmoore.com">Email</a>
+    </span>
+    <span>
+        <a href="https://github.com/andrewjamesmoore" target="_blank" data-tooltip="Visit my GitHub">Github</a>
+    </span>
+    <span> | </span>
+<span>
+    <a href="{{ url_for('toggle_theme') }}" data-tooltip="Switch to {{ 'dark' if theme == 'light-mode' else 'light' }} mode">
+        [Toggle Colour Mode]
+    </a>
+</span>
+</div>
+
         </div>
     </nav>
 

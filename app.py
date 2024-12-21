@@ -13,17 +13,19 @@ def home():
         print(f"Error fetching projects: {e}")
         project_list = []
     theme = request.cookies.get("theme", "light-mode")
+    opposite_theme = "dark-mode" if theme == "light-mode" else "light-mode"
     current_date = datetime.now().strftime("%B %Y")
-    return render_template("home.html", projects=project_list, date=current_date, theme=theme)
+    return render_template("home.html", projects=project_list, date=current_date, theme=theme, opposite_theme=opposite_theme)
+
 
 @app.route("/projects/<slug>")
 def project(slug):
-    project_data = fetch_project_by_slug(slug)  # Assuming this fetches the project
+    project_data = fetch_project_by_slug(slug)
     project_data['body_html'] = markdown(project_data.get('body', ''))
     theme = request.cookies.get("theme", "light-mode")
+    opposite_theme = "dark-mode" if theme == "light-mode" else "light-mode"
     current_date = datetime.now().strftime("%B %Y")
-    return render_template("project.html", project=project_data, date=current_date, theme=theme)
-
+    return render_template("project.html", project=project_data, date=current_date, theme=theme, opposite_theme=opposite_theme)
 
 
 @app.route("/toggle_theme", methods=["GET", "POST"])

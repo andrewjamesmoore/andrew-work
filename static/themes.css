@@ -7,6 +7,8 @@
     --border: #c2c2c2;
     --a-color: #5865F2;
     --a-visited-color: #5865F2;
+    --tooltip-bg: #121212;
+    --tooltip-text: white;
 }
 
 body {
@@ -30,4 +32,10 @@ body.dark-mode {
     --border: #444444;
     --a-color: #D5FFC0;
     --a-visited-color: #D5FFC0;
+}
+
+/* Dark Mode Support for Tooltip */
+body.dark-mode [data-tooltip]::after {
+  --tooltip-bg: white;
+  --tooltip-text: black;
 }
