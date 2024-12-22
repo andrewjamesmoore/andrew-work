@@ -17,6 +17,17 @@ def home():
     current_date = datetime.now().strftime("%B %Y")
     return render_template("home.html", projects=project_list, date=current_date, theme=theme, opposite_theme=opposite_theme)
 
+@app.route("/projects")
+def project_repo():
+    try:
+        project_list = get_all_entries('projects')
+    except Exception as e:
+        print(f"Error fetching projects: {e}")
+        project_list = []
+    theme = request.cookies.get("theme", "light-mode")
+    opposite_theme = "dark-mode" if theme == "light-mode" else "light-mode"
+    current_date = datetime.now().strftime("%B %Y")
+    return render_template("projects.html", projects=project_list, date=current_date, theme=theme, opposite_theme=opposite_theme)
 
 @app.route("/projects/<slug>")
 def project(slug):
@@ -36,6 +47,11 @@ def toggle_theme():
     response = make_response(redirect(referer_url))
     response.set_cookie("theme", new_theme)
     return response
+
+@app.errorhandler(Exception)
+def handle_error(error):
+    app.logger.error(f'An error occurred: {error}')
+    return render_template('error.html'), 500
 
 if __name__ == "__main__":
     app.run(debug=True)

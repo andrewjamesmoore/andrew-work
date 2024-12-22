@@ -1,9 +1,13 @@
+import os
+from dotenv import load_dotenv
 from contentful import Client
 
+load_dotenv()  # Load environment variables from .env file
+
 client = Client(
-  'gonrcsmm66kx',
-  'GMqr6I67Xwfm3aWci1BZWjpFTQz8gUUMmgg_ELX3XBA',
-  environment='master'  # Optional - it defaults to 'master'.
+    os.getenv('CONTENTFUL_SPACE_ID'),
+    os.getenv('CONTENTFUL_ACCESS_TOKEN'),
+    environment=os.getenv('CONTENTFUL_ENVIRONMENT', 'master')
 )
 
 def get_all_entries(content_type):

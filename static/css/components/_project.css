@@ -9,6 +9,14 @@
   margin-bottom: var(--space-largest);
 }
 
+.project__list {
+  column-count: 1;
+  column-gap: var(--space-large);
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .project {
     width: 100%;

@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<section>
+  <div>
+    <span><a href="/">[Return Home]</a></span>
+  </div>
+</section>
+<section>
+      <h2>Projects</h2>
+  <hr />
+<ul>
+    {% for project in projects %}
+    <li>
+      <h3>
+        <a href="/projects/{{ project.fields.slug }}"
+          >{{ project.fields.title }}</a
+        >
+      </h3>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

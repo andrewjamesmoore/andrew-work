@@ -13,7 +13,7 @@
   background-color: var(--tooltip-bg, #000);
   color: var(--tooltip-text, #fff);
   padding: 0.5rem;
-  font-size: 0.875rem;
+  font-size: var(--text-base);
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
