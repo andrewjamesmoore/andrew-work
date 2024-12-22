@@ -1,17 +1,16 @@
-/* homepage body content */
 
 /* skills and tools section */
-.home__skills {
-  column-count: 2;
-  column-gap: var(--space-large);
-  padding: 0;
-  margin: 0;
-  width: 100%;
+.skills {
+    display: flex;
+    gap: var(--space-large)
+    width: 100%
+    margin: 0;
+    padding: 0;
 }
 
-@media (max-width: 500px) {
-  .home__skills {
-    column-count: 1;
+@media (max-width: 768px) {
+  .skills {
+    flex-direction: column;
   }
 }
 

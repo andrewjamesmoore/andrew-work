@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="574a9cfe-ed8e-417a-bf19-fb606c4c09ee" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/components/_project.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/components/_project.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/components/_tooltip.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/components/_tooltip.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/utils/_variables.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/utils/_variables.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/components/_home.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/components/_home.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
