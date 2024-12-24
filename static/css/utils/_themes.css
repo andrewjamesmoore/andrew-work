@@ -11,11 +11,10 @@ body {
 }
 
 body.dark-mode {
-  --bg-color: #121212;
-  --bg-color-alt: #202020;
+  --bg-color: #161616;
   --text-color: white;
   --text-hover: white;
-  --border: #444444;
+  --border: #555555;
   --a-color: #d5ffc0;
   --a-visited-color: #d5ffc0;
 }
@@ -23,5 +22,5 @@ body.dark-mode {
 /* Dark Mode Support for Tooltip */
 body.dark-mode [data-tooltip]::after {
   --tooltip-bg: white;
-  --tooltip-text: black;
+  --tooltip-text: #202020;
 }

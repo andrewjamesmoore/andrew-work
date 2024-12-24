@@ -2,9 +2,9 @@
 <section>
   <h2>About</h2>
   <hr />
-    <span>
+    <div>
     I’m Andrew, a software designer and developer delivering products from concept to execution.
-    </span>
+    </div>
 </section>
 
 <section class="skills">
@@ -31,10 +31,10 @@
       <li><a href="https://platform.openai.com/docs/overview" target="_blank">LLMs</a> for rapid prototyping</li>
       <li><a href="https://help.figma.com/hc/en-us" target="_blank">Figma</a> for design at scale</li>
       <li>Version control in <a href="https://github.com/github/docs" target="_blank">Github</a></li>
-      <li><a href="https://www.typescriptlang.org/docs/" target="_blank">Typescript</a> and <a href="https://react.dev/reference/react" target="_blank">React</a> for Front-End Development</li>
+      <li><a href="https://www.typescriptlang.org/docs/" target="_blank">Typescript</a> and <a href="https://react.dev/reference/react" target="_blank">React</a> for front-end development</li>
       <li>Design system documentation in <a href="https://storybook.js.org/docs" target="_blank">Storybook</a></li>
-      <li>Unit testing with <a href="https://jestjs.io/docs/getting-started" target="_blank">Jest</a></li>
       <li><a href="https://docs.python.org/3/" target="_blank">Python</a> for backend and integrations</li>
+      <li>Unit testing with <a href="https://jestjs.io/docs/getting-started" target="_blank">Jest</a></li>
     </ul>
   </section>
 </section>
@@ -52,7 +52,7 @@
       </h3>
       <div>{{ project.fields.description }}</div>
       {% if project.fields.thumbnail %}
-      <img
+      <img class="thumbnail"
         src="{{ project.fields.thumbnail }}"
         alt="{{ project.fields.title }} thumbnail"
       />

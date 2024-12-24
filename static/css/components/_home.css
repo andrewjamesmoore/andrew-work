@@ -50,3 +50,10 @@
   margin-bottom: var(--space-large);
   width: 100%;
 }
+
+.home__project__item .thumbnail {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
