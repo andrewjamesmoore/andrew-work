@@ -31,7 +31,7 @@ img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border-radius: var(--space-small);
+  border-radius: var(--space-smallest);
 }
 
 p {
