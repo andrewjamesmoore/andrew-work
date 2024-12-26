@@ -15,8 +15,8 @@ body.dark-mode {
   --text-color: white;
   --text-hover: white;
   --border: #555555;
-  --a-color: #d5ffc0;
-  --a-visited-color: #d5ffc0;
+  --a-color: #94FFAA;
+  --a-visited-color: #94FFAA;
 }
 
 /* Dark Mode Support for Tooltip */
