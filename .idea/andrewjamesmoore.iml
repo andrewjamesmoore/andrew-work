@@ -3,8 +3,12 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/bin" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/include" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.12/site-packages/pip-24.3.1.dist-info" />
+      <excludeFolder url="file://$MODULE_DIR$/venv/lib/python3.12/site-packages/python_dotenv-1.0.1.dist-info" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.12 (andrewjamesmoore)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.12 (andrew-work)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
