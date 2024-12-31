@@ -1,10 +1,16 @@
 from datetime import datetime
 from flask import Flask, render_template, request, make_response, redirect, url_for
-from contentful_client import get_all_entries, fetch_project_by_slug
+from contentful_client import get_all_entries, fetch_project_by_slug, fetch_experiment_by_slug
 from markdown2 import markdown
 
 app = Flask(__name__)
 
+# Application Configuration
+app.config['SESSION_COOKIE_SECURE'] = True
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+
+
+# Global Variables
 @app.context_processor
 def inject_globals():
     theme = request.cookies.get("theme", "light-mode")
@@ -12,15 +18,20 @@ def inject_globals():
     current_date = datetime.now().strftime("%B %Y")
     return dict(theme=theme, opposite_theme=opposite_theme, date=current_date)
 
+
+# Home
 @app.route("/")
 def home():
     try:
         project_list = get_all_entries('projects')
+        experiment_list = get_all_entries('experiments')
     except Exception as e:
         print(f"Error fetching projects: {e}")
         project_list = []
-    return render_template("home.html", projects=project_list)
+        experiment_list = []
+    return render_template("home.html", projects=project_list, experiments=experiment_list)
 
+# Projects
 @app.route("/projects")
 def project_repo():
     try:
@@ -36,6 +47,23 @@ def project(slug):
     project_data['body_html'] = markdown(project_data.get('body', ''))
     return render_template("project.html", project=project_data)
 
+# Experiments
+@app.route("/experiments")
+def experiment_repo():
+    try:
+        experiment_list = get_all_entries('experiments')
+    except Exception as e:
+        print(f"Error fetching experiments: {e}")
+        experiment_list = []
+    return render_template("experiments.html", experiments=experiment_list)
+
+@app.route("/experiments/<slug>")
+def experiment(slug):
+    experiment_data = fetch_experiment_by_slug(slug)
+    experiment_data['body_html'] = markdown(experiment_data.get('body', ''))
+    return render_template("experiment.html", experiment=experiment_data)
+
+#Colour Theme
 @app.route("/toggle_theme", methods=["GET", "POST"])
 def toggle_theme():
     current_theme = request.cookies.get("theme", "light-mode")

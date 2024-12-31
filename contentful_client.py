@@ -51,3 +51,15 @@ def fetch_project_by_slug(slug):
     except Exception as e:
         print(f"Error fetching project with slug {slug}: {e}")
         return None
+
+def fetch_experiment_by_slug(slug):
+    """Fetch an experiment entry by its slug from Contentful."""
+    try:
+        entries = client.entries({'content_type': 'experiments', 'fields.slug': slug})  # Filter by slug
+        if entries:
+            return entries[0].fields()  # Return the fields of the first matching entry
+        else:
+            return None  # Return None if no matching project is found
+    except Exception as e:
+        print(f"Error fetching experiment with slug {slug}: {e}")
+        return None

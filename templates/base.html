@@ -24,7 +24,11 @@
       content="{% block og_description %}Calgary-based designer and developer working on enterprise software projects.{% endblock %}"
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ request.url }}" />
+    <meta property="og:url" content="https://andrewjamesmoore.com" />
+
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com;">
+
 
     <!-- Favicon -->
     <link
@@ -54,7 +58,7 @@
   </head>
 
   <body class="{{ theme }}">
-    <nav class="nav">
+    <nav class="nav" role="navigation">
       <div class="container theme-toggle">
         <div>
           <h1>Andrew James Moore</h1>
@@ -65,6 +69,8 @@
               <a
                 href="mailto:hello@andrewjamesmoore.com"
                 target="_blank"
+                aria-label="Email Andrew James Moore"
+                rel="noopener noreferrer"
                 data-tooltip="hello@andrewjamesmoore.com"
                 >Email</a
               >
@@ -73,6 +79,8 @@
               <a
                 href="https://github.com/andrewjamesmoore"
                 target="_blank"
+                aria-label="Visit my Github Profile page"
+                rel="noopener noreferrer"
                 data-tooltip="Visit my GitHub"
                 >Github</a
               >
@@ -91,15 +99,15 @@
       </div>
     </nav>
 
-    <div class="base">{% block content %}{% endblock %}</div>
+    <div class="base" role="main">{% block content %}{% endblock %}</div>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="container">
         <div>
           <span>{{ date }}</span>
         </div>
         <div>
-          <span>Made with <a href="https://flask.palletsprojects.com/en/stable/" target="_blank">Flask</a></span>
+          <span>Made with <a href="https://flask.palletsprojects.com/en/stable/" target="_blank" rel="noopener noreferrer">Flask</a></span>
         </div>
       </div>
     </footer>

@@ -3,7 +3,7 @@
   <h2>About</h2>
   <hr />
     <div>
-    I’m Andrew, a software designer and developer delivering products from concept to execution.
+    I’m Andrew, a software designer and developer working in the space of security and threat intelligence.
     </div>
 </section>
 
@@ -12,14 +12,15 @@
     <h2>Skills</h2>
     <hr />
     <ul>
-      <li>Design Principles: Creating intuitive, user-centered designs.</li>
+      <li>Accessibility: Designing inclusive experiences for all.</li>
       <li>Critical Thinking: Understanding the problems to be solved.</li>
       <li>Data-Informed Approach: Driving decisions through actionable insights.</li>
-      <li>Rapid Prototyping: Turning ideas into functional prototypes fast.</li>
-      <li>Visual Design: Delivering engaging, polished user interfaces.</li>
-      <li>Accessibility: Designing inclusive experiences for all.</li>
+      <li>Design Principles: Creating intuitive, user-centered designs.</li>
       <li>Product Management: Aligning teams to build meaningful products.</li>
       <li>Prompt Engineering: Exploring AI to innovate workflows.</li>
+      <li>Security Awareness: Various certificates in Cybersecurity.</li>
+      <li>Rapid Prototyping: Turning ideas into functional prototypes fast.</li>
+      <li>Visual Design: Delivering engaging, polished user interfaces.</li>
     </ul>
   </section>
 
@@ -28,17 +29,41 @@
     <hr />
     <ul>
       <li>Pen and paper for early-stage ideation</li>
-      <li><a href="https://platform.openai.com/docs/overview" target="_blank">LLMs</a> for rapid prototyping</li>
-      <li><a href="https://help.figma.com/hc/en-us" target="_blank">Figma</a> for design at scale</li>
-      <li>Version control in <a href="https://github.com/github/docs" target="_blank">Github</a></li>
-      <li><a href="https://www.typescriptlang.org/docs/" target="_blank">Typescript</a> and <a href="https://react.dev/reference/react" target="_blank">React</a> for front-end development</li>
-      <li>Design system documentation in <a href="https://storybook.js.org/docs" target="_blank">Storybook</a></li>
-      <li><a href="https://docs.python.org/3/" target="_blank">Python</a> for backend and integrations</li>
-      <li>Unit testing with <a href="https://jestjs.io/docs/getting-started" target="_blank">Jest</a></li>
+      <li><a href="https://platform.openai.com/docs/overview" target="_blank" rel="noopener noreferrer">LLMs</a> for rapid prototyping</li>
+      <li><a href="https://help.figma.com/hc/en-us" target="_blank" rel="noopener noreferrer">Figma</a> for design at scale</li>
+      <li>Version control in <a href="https://github.com/github/docs" target="_blank" rel="noopener noreferrer">Github</a></li>
+      <li><a href="https://www.typescriptlang.org/docs/" target="_blank" rel="noopener noreferrer">Typescript</a> and <a href="https://react.dev/reference/react" target="_blank">React</a> for front-end development</li>
+      <li>Design system documentation in <a href="https://storybook.js.org/docs" target="_blank" rel="noopener noreferrer">Storybook</a></li>
+      <li><a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">Python</a> for backend and integrations</li>
+      <li>Unit testing with <a href="https://jestjs.io/docs/getting-started" target="_blank" rel="noopener noreferrer">Jest</a></li>
     </ul>
   </section>
 </section>
 
+<!--Experimental Section-->
+<section>
+  <h2>Experimental 🧪</h2>
+  <hr />
+  <ul class="home__project">
+    {% for experiment in experiments %}
+    <li class="home__project__item">
+      <h3>
+        <a href="/experiments/{{ experiment.fields.slug }}"
+          >{{ experiment.fields.title }}</a
+        >
+      </h3>
+      <div>{{ experiment.fields.description }}</div>
+      {% if experiment.fields.thumbnail %}
+      <img class="thumbnail"
+        src="{{ experiment.fields.thumbnail }}"
+        alt="{{ experiment.fields.title }} thumbnail"
+      />
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+<!--Selected Works Section-->
 <section>
   <h2>Selected Work (2020 - Present)</h2>
   <hr />
