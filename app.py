@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, render_template, request, make_response, redirect, url_for
+from flask import Flask, render_template, request, make_response, redirect, url_for, send_from_directory
 from contentful_client import get_all_entries, fetch_project_by_slug, fetch_experiment_by_slug
 from markdown2 import markdown
 
@@ -43,6 +43,11 @@ def inject_globals():
     theme, opposite_theme = get_theme()
     current_date = datetime.now().strftime("%B %Y")
     return dict(theme=theme, opposite_theme=opposite_theme, date=current_date)
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory('static', 'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 # Home
