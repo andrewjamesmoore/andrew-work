@@ -1,6 +1,6 @@
 ### andrewjamesmoore.com (personal portfolio)
 
-In past versions, I've spent a lot of time focusing on the visuals of my own portfolio. Often experimenting with libraries, animations, and the latest styling trends. For this project, I shifted the focus to creating a more stripped-down, barebones experience. By moving away from flashy visuals and complex frontend frameworks, I was able to get back to the basics—prioritizing speed, accessibility, and simplicity. This approach not only helped streamline development but also allowed me to create a fast, lightweight portfolio that emphasizes performance without sacrificing modern features like dark mode and responsive design.
+For this version of my portfolio, I shifted the focus from fancy animations and fads to creating a stripped-down experience. By moving away from flashy visuals and complex frontend frameworks, I was able to get back to the basics—prioritizing speed, accessibility, and simplicity. This approach not only helped streamline the development but also allowed me to create a fast, lightweight portfolio that emphasizes performance without sacrificing modern features like dark mode and responsive design. Not finished by any means but something to get up and build upon.
 
 __Details:__
 
